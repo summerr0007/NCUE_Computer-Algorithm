@@ -1,3 +1,4 @@
+from functools import lru_cache
 import logging
 import sys
 
@@ -19,7 +20,9 @@ class filereader:
     def __call__(self):
         try:
             self.testfile = open(self.path,"r")
-            return self.testfile.read().split(" ")
+            lines = self.testfile.readlines()
+            lines = [ line.strip().split(' ') for line in lines]
+            return lines
         except Exception as e:
             logger.critical(e)
             exit()
