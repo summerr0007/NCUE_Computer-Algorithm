@@ -27,6 +27,7 @@ class filereader:
             self.testfile = open(self.path, "r")
             lines = self.testfile.readlines()
             lines = [line.strip().split(' ') for line in lines]
+            self.testfile.close()
             return self.topoint(lines)
         except Exception as e:
             logger.critical(e)
@@ -120,14 +121,16 @@ if __name__ == "__main__":
     #     print(a)
 
     # print("*******************************************************************")
+    heapsort(points)
     Rank2D(0, len(points))
     for a in zip(o_points, ranks):
         print(a[0], "rank is ", a[1])
 
-    print(f"total = {len(points)} \n")
+    print(f"total points = {len(points)} \n")
     print(f"max rank = {max(ranks)}\n")
     print(f"min rank = {min(ranks)}\n")
     print(f"average rank = {round(sum(ranks)/len(ranks)):.2f}\n")
+
 
 # for a in buffer:
 #     print(a)

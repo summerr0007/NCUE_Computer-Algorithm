@@ -47,15 +47,28 @@ void Rank2D(int lower, int upper) {
 int main() {
 	cin.sync_with_stdio(false); cin.tie(nullptr);
 	int amount;
-	while (cin >> amount) {
-		memset(ranks, 0, sizeof(ranks));
-		for (int i = 0; i < amount; ++i) {
-			cin >> points[i].x >> points[i].y;
-			points[i].index = i;
-		}
-		sort(points, points + amount);
-		Rank2D(0, amount);
-		for (int i = 0; i < amount; ++i)
-			cout << points[i].x << "     " << points[i].y<< '\n';
+	// while (cin >> amount) {
+	// 	memset(ranks, 0, sizeof(ranks));
+	// 	for (int i = 0; i < amount; ++i) {
+	// 		cin >> points[i].x >> points[i].y;
+	// 		points[i].index = i;
+	// 	}
+	// 	sort(points, points + amount);
+	// 	Rank2D(0, amount);
+	// 	for (int i = 0; i < amount; ++i)
+	// 		cout << ranks[i] << '\n';
+	// }
+	point p1 ;
+	point p2 ;
+	p1.x=1;
+	p1.y=1;
+	p2.x=1;
+	p2.y=2;
+	if(p1 < p2){
+		printf("yyyyyyyyy\n");
+	}else{
+		printf("nnnnnnnnn\n");
 	}
+
+	
 }
